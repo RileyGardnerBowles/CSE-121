@@ -1,3 +1,4 @@
+/*This is just check.c*/
 #include <stdio.h>
 #include <stdlib.h>
 

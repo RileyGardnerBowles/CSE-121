@@ -1,3 +1,8 @@
+/*First contact with string modification.
+You would not believe how difficult this was for me to figure out.
+My main challenge was figuring out how to pass variables between functions.
+Pointers were an absolute brain-buster to me.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #define MAXLEN 100
@@ -9,14 +14,12 @@ void alphabetize(char[]);
 void lowercase(char[]);
 void palindrome(char[], char[]);
 
-int main(void)
-{
-	char *input;
-	char *inputCopy;
-	input = (char *)calloc(MAXLEN, sizeof(char));
-	inputCopy = (char *)calloc(MAXLEN, sizeof(char));
-	if (DEBUG)
-	{
+int main(void) {
+	char* input;
+	char* inputCopy;
+	input = (char*)calloc(MAXLEN, sizeof(char));
+	inputCopy = (char*)calloc(MAXLEN, sizeof(char));
+	if (DEBUG) {
 		memTest(input);
 		memTest(inputCopy);
 	}
@@ -26,8 +29,7 @@ int main(void)
 	fgets(input, MAXLEN, stdin);
 	input[stringchars(input) - 1] = '\0'; // Removes remnant line-break from stdin
 	sprintf(inputCopy, "%s", input);	  // Copies input into input copy
-	if (DEBUG)
-	{
+	if (DEBUG) {
 		printf("String is [%s]\n", input);
 		printf("Copy of string is [%s]\n", inputCopy);
 	}
@@ -37,10 +39,8 @@ int main(void)
 }
 int stringchars(char lenStr[]) // Retrieves how many characters are in a string (does not include terminator)
 {
-	for (int i = 0; i < MAXLEN; i++)
-	{
-		if (lenStr[i] == '\0')
-		{
+	for (int i = 0; i < MAXLEN; i++) {
+		if (lenStr[i] == '\0') {
 			if (DEBUG)
 				printf("STRINGLENGTH\n String length is %i\n", i);
 			return i;
@@ -52,30 +52,25 @@ void alphabetize(char alphaStr[]) // Culls a string to only alphanumeric charact
 	if (DEBUG)
 		printf("ALPHABETIZE\n Initial string is %s", alphaStr);
 	int compare;
-	for (int read = 0, write = 0; read < MAXLEN; read++)
-	{
+	for (int read = 0, write = 0; read < MAXLEN; read++) {
 		compare = (int)alphaStr[read]; // Retrieves ASCII code of read point
-		if (alphaStr[read] == '\0')
-		{
+		if (alphaStr[read] == '\0') {
 			alphaStr[write++] = alphaStr[read];
 			if (DEBUG)
 				printf(" Alphabetized string is %s\n", alphaStr);
 			return;
 		}
-		else if ((compare >= 65 && compare <= 90) || (compare >= 97 && compare <= 121))
-		{
+		else if ((compare >= 65 && compare <= 90) || (compare >= 97 && compare <= 121)) {
 			alphaStr[write++] = alphaStr[read];
 		}
 	}
 }
-void lowercase(char lowerStr[])
-{
+void lowercase(char lowerStr[]) {
 	if (DEBUG)
 		printf("LOWERCASE\n Initial string is %s\n", lowerStr);
 	int compare;
 	int terminal = stringchars(lowerStr);
-	for (int i = 0; i < terminal; i++)
-	{
+	for (int i = 0; i < terminal; i++) {
 		compare = (int)lowerStr[i]; // Retrieves ASCII code of at point i of array
 		if (DEBUG)
 			printf("  Comparing point %c...\n", lowerStr[i]);
@@ -90,19 +85,16 @@ void lowercase(char lowerStr[])
 	if (DEBUG)
 		printf(" Lowercase string is %s\n", lowerStr);
 }
-void palindrome(char palStr[], char copyStr[])
-{
+void palindrome(char palStr[], char copyStr[]) {
 	alphabetize(palStr);
 	lowercase(palStr);
 	int palLen = stringchars(palStr);
 	int end = palLen - 1;
-	if (DEBUG)
-	{
+	if (DEBUG) {
 		printf("PALINDROME\n");
 		printf(" palindrome length is %i\n", palLen);
 	}
-	if ((palLen % 2) == 1)
-	{
+	if ((palLen % 2) == 1) {
 		if (DEBUG)
 			printf("palinLen is odd! Decreasing by 1...\n");
 		--palLen;
@@ -110,32 +102,26 @@ void palindrome(char palStr[], char copyStr[])
 	palLen = palLen / 2;
 	if (DEBUG)
 		printf(" After odd-check, palinLen is %i\n", palLen);
-	for (int start = 0; start < end; start++, end--)
-	{
+	for (int start = 0; start < end; start++, end--) {
 		if (DEBUG)
 			printf(" Checking characters %c and %c:", palStr[start], palStr[end]);
-		if (palStr[start] == palStr[end])
-		{
+		if (palStr[start] == palStr[end]) {
 			if (DEBUG)
 				printf("these are the same\n");
 		}
-		else
-		{
+		else {
 			printf("This is not a palindrome\n");
 			return;
 		}
 	}
 	printf("%s is a palindrome\n", copyStr);
 }
-void memTest(char memStr[])
-{
+void memTest(char memStr[]) {
 
-	if (memStr != NULL)
-	{
+	if (memStr != NULL) {
 		printf("Memory for input successfully allocated\n");
 	}
-	else
-	{
+	else {
 		printf("ERROR: MEMORY NOT ALLOCATED\n");
 	}
 }

@@ -1,3 +1,4 @@
+/*my guess is that this was the same deal as quiztest.c.*/
 #include <stdio.h>
 
 int main(void)

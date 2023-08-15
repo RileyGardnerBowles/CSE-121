@@ -1,7 +1,7 @@
+/*This is just p1.c. No clue.*/
 #include <stdio.h>
 
-int main(void)
-{
+int main(void) {
 	int a, b, c;
 
 	a = 10;

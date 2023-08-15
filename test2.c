@@ -1,3 +1,5 @@
+/*Also like quiztest.c. I think this code was to differentiate
+between AND and bitwise AND?*/
 #include <stdio.h>
 
 int main(void)

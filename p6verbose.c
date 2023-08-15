@@ -1,3 +1,4 @@
+//P6, but with documentation.
 #include <stdio.h>
 #include <stdlib.h>
 #define MAXLEN 100

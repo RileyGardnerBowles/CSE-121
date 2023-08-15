@@ -3,8 +3,7 @@
 /*This is where I first learned about float values!
 Unfortunately, I learned in 32-bit linux, so I'm not 100% on their sizes.
 Good thing we have sizeof(), right?*/
-int main(void)
-{
+int main(void) {
 	// Variable declaration, setting everything to 0 to reduce comically long error numbers
 	double orangeInPounds = 0;
 	double orangeCost = 0;
@@ -55,7 +54,7 @@ int main(void)
 	printf("E. Drinks %8i   %5.2lf  %4.2lf\n", energyDrink, energyDrinkCost, energyDrinkTax);
 	printf("Yogurt    %8i   %5.2lf  %4.2lf\n", yogurt, yogurtCost, yogurtTax);
 	printf("\nTotals               %5.2lf  %4.2lf\n\n", totalSub, totalTax);
-	printf("Grand Total          %5.2lf\n\n",totalGrand);
+	printf("Grand Total          %5.2lf\n\n", totalGrand);
 
 	// Obligatory return 0
 	return 0;

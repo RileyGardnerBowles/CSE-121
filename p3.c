@@ -1,7 +1,8 @@
+/*Super basic script that calculates interest payments.
+This is one of those programs made to solve an exact problem rather than actually be useful.*/
 #include <stdio.h>
 
-int main(void)
-{
+int main(void) {
     // Variable declaration, sorted by category
     double loanAmount = 0;        // The numerical size of the loan provided by user. Whittled away by leftOverPayment every month
     double loanPayment = 0;       // The base loan payment provided by user
@@ -31,10 +32,9 @@ int main(void)
     interestMonthly = (interestRate / 100.00) / 12.00; // Used in looped calculation
     monthTotal = years * 12;                           // Used as a terminator for the loop
     month = 0;                                         // Used as a counter for the loop
-    
+
     //This loops
-    for (month = 1; month <= monthTotal; month++)
-    {
+    for (month = 1; month <= monthTotal; month++) {
         interestAmount = interestMonthly * loanAmount;    // Calculates this month's interest
         interestTotal += interestAmount;                  // Adds this month's interest to the total interest
         loanActualPayment = loanPayment - interestAmount; // This will create a positive number if your bank isn't screwing you over.

@@ -1,8 +1,8 @@
+/*I used this code to testrun code natively on the SSH terminal.*/
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, const char *argv[])
-{
+int main(int argc, const char* argv[]) {
 	char cmd[100];
 	char path[] = "/home/faculty/skoss/cse121/r.gardner-bowles/";
 	char argument[] = argv[1];

@@ -1,3 +1,4 @@
+/*I feel like previous me explained this one pretty well. Note this is in 32-bit linux!*/
 #include <stdio.h>
 
 void print_binary(unsigned long long int);
@@ -25,8 +26,8 @@ void print_binary(unsigned long long int numberToBinarize)
           input: 00000000
           one:   00000001
           result:00000000
-          Since none of the bits are both at one, this set of operations returns a 0, which printf() then prints.
-          We can printf() this accurately because by default, linebreaks are not added by every printf() call.
+          Since neither of the bits are both at one, this set of operations returns a 0, which printf() then prints.
+          We can printf() this accurately because, by default, linebreaks are not added by every printf() call.
           It then repeats, each time bit-shifting it one less time.
 
           Let's skip a few turns of this to the first printed 1:

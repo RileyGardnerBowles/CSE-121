@@ -1,6 +1,5 @@
+//A classic addition script. The way strings are formatted here let me really appreciate python's f-strings.
 #include <stdio.h>
-
-//A classic addition script.. The way strings are formatted here let me really appreciate python's f-strings.
 
 int main(void) {
 	int a, b, c;

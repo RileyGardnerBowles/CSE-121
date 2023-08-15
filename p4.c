@@ -1,3 +1,6 @@
+/*I'm a very flawed type of smart that often forgets important things.
+Here, I didn't know basic properties of prime that would WAY speed up this code.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>

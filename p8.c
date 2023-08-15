@@ -1,3 +1,5 @@
+/*File creation! Learning how to manipulate files from within codewas INSANE to me.
+It felt like I had achieved infinite coding power through making a text file, lol*/
 #include <stdio.h>
 int main(void)
 {

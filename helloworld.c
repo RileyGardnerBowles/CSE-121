@@ -1,3 +1,4 @@
+/*A classic!*/
 #include <stdio.h>
 
 int main(void)
